@@ -22,7 +22,7 @@ const Header = () => {
             Project
           </Link>
           <Link href="/contact" className="mr-5 hover:text-white">
-            Contact{" "}
+            Contact
           </Link>
           {/* <a className="hover:text-white"></a> */}
         </nav>
@@ -41,7 +41,7 @@ const Header = () => {
           </span>
         </Link>
         <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-          <a
+          <Link
             download
             href="./resume.pdf"
             className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group "
@@ -61,12 +61,12 @@ const Header = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Mobile view */}
-      <div className=" md:hidden text-black" >
+      <div className=" md:hidden text-black">
         {!showMenu && (
           <div
             className={`bg-gradient-to-r from-gray-600 via-gray-600 to-gray-400 w-2/3 absolute top-0 left-0 h-screen rounded-r-2xl shadow-2xl drop-shadow-2xl transition-all duration-700 ease-in-out ${
@@ -87,6 +87,27 @@ const Header = () => {
               <Link href="/contact" className="mr-5 hover:text-white">
                 Contact
               </Link>
+              <a
+                download
+                href="./resume.pdf"
+                className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group "
+              >
+                <span className="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0" />
+                <span className="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
+                  Resume
+                </span>
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  className="w-4 h-4 ml-1"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
             </nav>
           </div>
         )}
