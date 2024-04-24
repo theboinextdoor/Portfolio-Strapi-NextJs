@@ -1,26 +1,8 @@
-"use client"
 import ProjectCard from "@/components/ProjectCard";
+import axios from "axios";
 import React, { useEffect } from "react";
 
-const fetchProject = async() =>{
-  const options= {
-    headers : {
-      Authorization : `Bearer ${process.env.STRAPI_PROJECT_TOKEN}`
-    }
-  }
-  try{
-    const res = await fetch(`http://127.0.0.1:1337/api/projects?populate=*`, options)
-    const response = await res.json();
-    return response;
-  }catch(error){
-    console.log("Error is happening")
-    console.log(error)
-  }
-}
-
-const pages = async() => {
-  const projectData= await fetchProject();
-  console.log(projectData)
+const pages = async () => {
   return (
     <section className="text-gray-400 body-font bg-black md:p-24 p-14">
       <div className="container px-5 py-24 mx-auto">
@@ -32,20 +14,10 @@ const pages = async() => {
             <div className="h-1 w-20 bg-indigo-500 rounded" />
           </div>
           <p className="lg:w-1/2 w-full leading-relaxed text-gray-400 text-opacity-90">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify, subway tile poke farm-to-table. Franzen you probably
-            haven&apos;t heard of them man bun deep jianbing selfies heirloom
-            prism food truck ugh squid celiac humblebrag.
+           Hey this is Faraaz
           </p>
         </div>
-        <div className="flex flex-wrap -m-4 ">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+        <div className="flex flex-wrap m-4 gap-4">
           <ProjectCard />
         </div>
       </div>

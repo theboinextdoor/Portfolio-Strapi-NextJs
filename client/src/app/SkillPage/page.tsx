@@ -14,9 +14,6 @@ const page = () => {
           <SkillPageCard />
           <SkillPageCard />
           <SkillPageCard />
-          <SkillPageCard />
-          <SkillPageCard />
-          <SkillPageCard />
         </div>
       </div>
     </section>
