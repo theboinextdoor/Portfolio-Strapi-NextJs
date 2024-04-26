@@ -31,6 +31,19 @@
     "languageURL": {
       "type": "string",
       "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Language",
+        "Framework",
+        "Styling",
+        "DataBase",
+        "CMS",
+        "Others"
+      ],
+      "default": "Language",
+      "required": true
     }
   }
 }

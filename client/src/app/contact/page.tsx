@@ -24,7 +24,7 @@ const pages = () => {
               <h2 className="title-font font-semibold text-white tracking-widest text-xs">
                 ADDRESS
               </h2>
-              <p className="mt-1">Electronic City ,Bengaluru</p>
+              <p className="mt-1">Electronic City,<br />Bengaluru,560100</p>
             </div>
             <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
              

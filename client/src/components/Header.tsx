@@ -9,7 +9,11 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
   const handleMenuButton = () => {
     setShowMenu((prev) => !prev);
+    // setShowMenu((prev) => !prev);
   };
+  const handleCloseMenu = ()=>{
+    setShowMenu(false)
+  }
   return (
     <header className=" text-white z-40 bg-black body-font fixed h-18 w-screen">
 
@@ -107,16 +111,16 @@ const Header = () => {
         >
           {showMenu && (
             <nav className="flex flex-col gap-8 items-center text-md my-4 ">
-              <Link href="/" className="mr-5 hover:text-white">
+              <Link href="/" className="mr-5 hover:text-white" onClick={handleCloseMenu}>
                 Home
               </Link>
-              <Link href="/project" className="mr-5 hover:text-white">
+              <Link href="/project" className="mr-5 hover:text-white" onClick={handleCloseMenu}>
                 Project
               </Link>
-              <Link href="/SkillPage" className="mr-5 hover:text-white">
+              <Link href="/SkillPage" className="mr-5 hover:text-white" onClick={handleCloseMenu}>
                 My Skills
               </Link>
-              <Link href="/contact" className="mr-5 hover:text-white">
+              <Link href="/contact" className="mr-5 hover:text-white" onClick={handleCloseMenu}>
                 Contact
               </Link>
               <a

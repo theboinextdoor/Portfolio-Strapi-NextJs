@@ -18,15 +18,15 @@ const Footer = () => {
           © 2023 theboynextdoor —
         </p>
         <div className="flex sm:ml-auto  gap-4 sm:mt-0 mt-4 justify-center sm:justify-start ">
-          <Link href="https://twitter.com/heyanonymouss">
+          <Link href="https://twitter.com/heyanonymouss"target="_blank">
             <FaXTwitter className="cursor-pointer md:text-3xl" />
           </Link>
 
-          <Link href={"https://github.com/theboinextdoor"}>
+          <Link href={"https://github.com/theboinextdoor"}target="_blank">
             <IoLogoGithub className="cursor-pointer md:text-3xl" />
           </Link>
 
-          <Link href="https://www.linkedin.com/in/faraaz-ashraf-831796204/">
+          <Link href="https://www.linkedin.com/in/faraaz-ashraf-831796204/"target="_blank">
             <FaLinkedin className="cursor-pointer md:text-3xl" />
           </Link>
           <Link href={"mailto:farazashraf1523@gmail.com"} target="_blank">

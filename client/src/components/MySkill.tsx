@@ -1,9 +1,61 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SkillCard from "./SkillCard";
+import config from "@/config";
+import SkillPageCard from "./SkillPageCard";
+
+interface Skills {
+  attributes: {
+    Language: string;
+    languageURL: string;
+    description: string;
+    category: string;
+    image: {
+      data: {
+        attributes: {
+          url: string;
+        };
+      };
+    };
+  };
+  id: number;
+}
+
+const fetchMySkillData = async () => {
+  const reqOption = {
+    headers: {
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_SKILL_TOEKN}`,
+    },
+  };
+
+  try {
+    const request = await fetch(
+      `${config.api}/api/skills?populate=*`,
+      reqOption
+    );
+    const response = await request.json();
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    return error;
+  }
+};
+
 
 const MySkill = () => {
+  const [myskills , setMyskills] = useState<Skills[]>([])
+  const totalCard = 5
+
+  useEffect(()=>{
+    const fetchData = async () => {
+      const skills = await fetchMySkillData();
+      setMyskills(skills);
+    };
+    fetchData(); 
+  })
+
   return (
     <section className="text-gray-400 bg-black body-font rounded-2xl shadow-md drop-shadow-md shadow-cyan-300">
       <div className="container px-5 py-24 mx-auto">
@@ -22,11 +74,15 @@ const MySkill = () => {
 
         {/* Card */}
         <div className="flex flex-col flex-wrap gap-8 md:flex-row justify-center items-center">
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
+          {
+            myskills.map((skill , id) =>(
+              <SkillCard key={skill.id} skills={skill} />
+              
+            ))
+          }
+          
+         
+         
         </div>
         <div className=" flex items-center justify-center p-8">
           <Link href="./SkillPage"
